@@ -92,16 +92,24 @@ export function VisualCarousel() {
       />
       <div
         aria-hidden="true"
+        className="absolute inset-0 bg-white/15"
+      />
+      <div
+        aria-hidden="true"
         className="absolute inset-0 bg-[linear-gradient(115deg,rgba(36,21,76,0.08),transparent_45%)]"
       />
 
       <div className="absolute inset-0 flex flex-col p-10 xl:p-12">
-        <p
-          className="text-3xl font-medium tracking-[-0.08em] text-white"
-          style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-        >
-          DexLabz
-        </p>
+        <div className="-ml-5 -mt-5 self-start xl:-ml-20 xl:-mt-20">
+          <Image
+            alt="DexLabz"
+            className="h-44 w-auto object-contain xl:h-82"
+            height={208}
+            priority
+            src="/images/dexlabzlogo.png"
+            width={114}
+          />
+        </div>
 
         <div className="mt-auto max-w-xl pb-5">
           <div aria-live="polite" className="min-h-[230px]">

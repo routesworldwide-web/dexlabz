@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { RegistrationForm } from "@/components/registration-form";
 import { VisualCarousel } from "@/components/visual-carousel";
 
@@ -14,17 +12,6 @@ export default function Home() {
           className="flex items-center justify-center px-5 py-10 sm:px-10 sm:py-12 lg:px-14 xl:px-20"
         >
           <div className="w-full max-w-[520px]">
-            <div className="mb-7 flex items-center sm:mb-8">
-              <Image
-                alt="DexLabz"
-                className="h-20 w-auto object-contain sm:h-24"
-                height={96}
-                priority
-                src="/images/dexlabzlogo.png"
-                width={52}
-              />
-            </div>
-
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-600">
               Private registration
             </p>
