@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DexLabz Access
 
-## Getting Started
+A one-time-code registration application built with Next.js, TypeScript,
+Tailwind CSS, and MongoDB.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 20.9 or newer
+- npm
+- MongoDB Atlas or another replica-set deployment that supports transactions
+
+## Local setup
+
+1. Copy `.env.example` to `.env.local`.
+2. Replace every placeholder with your own database URL and random secrets.
+3. Install dependencies with `npm install`.
+4. Start the development server with `npm run dev`.
+5. Open `http://localhost:3000`.
+
+On Windows PowerShell systems that block npm scripts, use `npm.cmd` in place of
+`npm`, for example `npm.cmd run dev`.
+
+## Commands
+
+- `npm run dev` — start the development server
+- `npm run lint` — run ESLint
+- `npm run typecheck` — check TypeScript
+- `npm run build` — create a production build
+- `npm run db:indexes` — ensure required MongoDB indexes exist
+- `npm run codes:import -- <file>` — securely import authentication codes
+
+Do not commit `.env.local` or authentication codes.
+
+`MONGO_URI` is accepted as an alias for `MONGODB_URI`. `SESSION_SECRET` must be
+a random value of at least 32 characters.
+
+## Importing authentication codes
+
+Codes are normalized and stored in plaintext in MongoDB. Restrict database
+access because anyone who can read the authentication-code collection can see
+all available codes.
+
+Use a JSON array:
+
+```json
+[
+  "ACCESS-001",
+  {
+    "code": "ACCESS-002",
+    "assignedEmail": "member@example.com",
+    "batch": "launch",
+    "expiresAt": "2026-12-31T23:59:59Z"
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or use a text file with one code per line. Blank lines and lines beginning
+with `#` are ignored.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Preview an import:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+npm.cmd run codes:import -- .\private\codes.txt --dry-run
+```
 
-## Learn More
+Import it:
 
-To learn more about Next.js, take a look at the following resources:
+```powershell
+npm.cmd run codes:import -- .\private\codes.txt
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Existing codes are left unchanged. Duplicate values in the input file are
+collapsed, and the unique database index prevents duplicate codes under
+concurrent imports.
