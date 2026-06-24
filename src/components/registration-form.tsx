@@ -220,7 +220,7 @@ export function RegistrationForm() {
       </div>
 
       <button
-        className="group flex h-13 w-full items-center justify-center gap-2  bg-slate-950 px-5 text-sm font-semibold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-indigo-700/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:translate-y-0 disabled:cursor-not-allowed disabled:translate-y-0 disabled:bg-slate-400 disabled:shadow-none"
+        className="group flex h-13 w-full items-center justify-center gap-2  bg-slate-950 px-5 text-sm text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-indigo-700/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:translate-y-0 disabled:cursor-not-allowed disabled:translate-y-0 disabled:bg-slate-400 disabled:shadow-none"
         disabled={isSubmitting || isComplete}
         type="submit"
       >
