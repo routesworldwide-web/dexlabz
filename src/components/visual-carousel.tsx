@@ -83,12 +83,10 @@ export function VisualCarousel() {
           key={`gradient-${slide.image}`}
         />
       ))}
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.2),transparent_28%),radial-gradient(circle_at_72%_28%,rgba(103,232,249,0.18),transparent_24%),radial-gradient(circle_at_50%_86%,rgba(12,6,24,0.8),transparent_42%)]"
-      />
-
+<div
+  aria-hidden="true"
+  className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(255,255,255,0.5),transparent_36%),radial-gradient(circle_at_72%_24%,rgba(125,211,252,0.14),transparent_24%),radial-gradient(circle_at_50%_82%,rgba(37,99,235,0.12),transparent_40%)]"
+/>
       {/* {slides.map((slide, index) => (
         <div
           aria-hidden={index !== activeSlide}
