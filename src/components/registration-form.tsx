@@ -212,7 +212,7 @@ export function RegistrationForm() {
                 id={errorId}
                 role={error ? "alert" : undefined}
               >
-                {error ?? "No error"}
+                {error ?? ""}
               </p>
             </div>
           );

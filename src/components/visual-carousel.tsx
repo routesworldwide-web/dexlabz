@@ -79,8 +79,8 @@ export function VisualCarousel() {
             alt={slide.alt}
             className="object-cover"
             fill
-            priority={index === 0}
-            sizes="(min-width: 1024px) 55vw, 0vw"
+            preload={index === 0}
+            sizes="(min-width: 1024px) 55vw, 100vw"
             src={slide.image}
           />
         </div>
@@ -100,12 +100,12 @@ export function VisualCarousel() {
       />
 
       <div className="absolute inset-0 flex flex-col p-10 xl:p-12">
-        <div className="-ml-5 -mt-5 self-start xl:-ml-20 xl:-mt-20">
+        <div className="self-start">
           <Image
             alt="DexLabz"
-            className="h-44 w-auto object-contain xl:h-82"
+            className="h-36 w-auto object-contain lg:h-44 xl:h-52"
             height={208}
-            priority
+            preload
             src="/images/dexlabzlogo.png"
             width={114}
           />
