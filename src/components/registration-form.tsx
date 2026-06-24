@@ -185,7 +185,7 @@ export function RegistrationForm() {
                   aria-invalid={Boolean(error)}
                   autoCapitalize={isCode ? "characters" : "none"}
                   autoComplete={field.autoComplete}
-                  className="h-12 w-full  border border-slate-200 bg-white px-4 text-[15px] text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 aria-[invalid=true]:border-rose-400 aria-[invalid=true]:focus:border-rose-500 aria-[invalid=true]:focus:ring-rose-500/10"
+                  className="h-12 w-full  border border-slate-400 bg-white px-4 text-[15px] text-slate-950 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 aria-[invalid=true]:border-rose-400 aria-[invalid=true]:focus:border-rose-500 aria-[invalid=true]:focus:ring-rose-500/10"
                   id={inputId}
                   inputMode={field.inputMode}
                   disabled={isSubmitting || isComplete}
