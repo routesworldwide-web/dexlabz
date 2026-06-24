@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-import { BrandLogo } from "@/components/brand-logo";
+// import { BrandLogo } from "@/components/brand-logo";
 import { getCurrentUser } from "@/lib/current-user";
 
 export const metadata: Metadata = {
@@ -25,13 +25,13 @@ export default async function WelcomePage() {
         fill
         preload
         sizes="100vw"
-        src="/images/welcome-page-bg.png"
+        src="/images/welcome-bg2.png"
       />
-
+{/* 
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-[1] bg-slate-950/30"
-      />
+        className="absolute inset-0 z-[1] bg-black/10"
+      /> */}
 
       <div className="relative z-10 flex min-h-screen flex-col px-6 py-7 sm:px-10 lg:px-14 lg:py-10">
         {/* <header className="flex items-center justify-between">
@@ -47,7 +47,14 @@ export default async function WelcomePage() {
         </header> */}
 
         <section className="welcome-content mx-auto flex min-h-screen w-[min(88vw,620px)] flex-col items-center justify-center py-8 text-center text-[#ffffff] sm:py-10 md:py-12">
-          <BrandLogo className="welcome-page-logo mb-2" size="mobile" />
+          {/* <BrandLogo className="welcome-page-logo mb-2" size="mobile" /> */}
+            <Image
+  src="/images/dexlabz-logo1.png"
+  alt="DexLabz Logo"
+  width={128}
+  height={128}
+  className="mb-12 h-auto w-32"
+/>
 
           {/* <div className="inline-flex items-center gap-2 rounded-full border border-[#2948af]/20 bg-white/35 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] backdrop-blur-sm">
             <CheckIcon />
