@@ -32,3 +32,257 @@ body {
   background: #c7d2fe;
   color: #1e1b4b;
 }
+
+.dexlabz-brand-logo {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.dexlabz-brand-logo--mobile {
+  width: 180px;
+  height: 330px;
+}
+
+.dexlabz-brand-logo--desktop {
+  width: 6.5rem;
+  height: 12rem;
+}
+
+.dexlabz-brand-logo__crop {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 260px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dexlabz-brand-logo--desktop .dexlabz-brand-logo__crop {
+  height: 9.75rem;
+}
+
+.welcome-page-logo {
+  width: 155px;
+  height: 270px;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__crop {
+  height: 230px;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__image {
+  filter: saturate(1.35) contrast(1.35) brightness(1.15)
+    drop-shadow(0 0 10px rgba(125, 233, 255, 0.22));
+}
+
+.welcome-page-logo .dexlabz-brand-logo__bubbles {
+  top: -0.35rem;
+  height: 4.8rem;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__bubbles::before {
+  top: -0.3rem;
+}
+
+.dexlabz-brand-logo__image {
+  position: absolute;
+  left: 50%;
+  top: -24%;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}
+
+.dexlabz-brand-logo--mobile .dexlabz-brand-logo__image {
+  top: -18%;
+}
+
+.dexlabz-brand-logo--mobile .dexlabz-brand-logo__bubbles {
+  top: -0.15rem;
+}
+
+.dexlabz-brand-logo__bubbles {
+  position: absolute;
+  left: 69%;
+  top: -2rem;
+  width: 2.5rem;
+  height: 4rem;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.dexlabz-brand-logo__bubbles::before {
+  position: absolute;
+  left: 50%;
+  top: -0.65rem;
+  width: 4.4rem;
+  height: 5.1rem;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(104, 225, 255, 0.42) 0%,
+    rgba(104, 225, 255, 0.2) 34%,
+    transparent 72%
+  );
+  content: "";
+  filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+.dexlabz-brand-logo__bubble {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 35% 28%, #a5f3ff 0 18%, transparent 19%),
+    linear-gradient(145deg, #7de9ff, #28bff4);
+  box-shadow:
+    0 0 18px rgba(79, 218, 255, 0.45),
+    inset 0 -2px 5px rgba(8, 76, 128, 0.18);
+  opacity: 0.9;
+  animation: dexlabz-bubble-rise 2.6s ease-in-out infinite;
+}
+
+.dexlabz-brand-logo__bubble--one {
+  left: 1.1rem;
+  bottom: 0.05rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  animation-delay: -0.3s;
+}
+
+.dexlabz-brand-logo__bubble--two {
+  left: 1.22rem;
+  bottom: 1.15rem;
+  width: 0.74rem;
+  height: 0.74rem;
+  animation-delay: -1.2s;
+}
+
+.dexlabz-brand-logo__bubble--three {
+  left: 1.15rem;
+  top: 0.9rem;
+  width: 0.88rem;
+  height: 0.88rem;
+  animation-delay: -2s;
+}
+
+.dexlabz-brand-logo__bubble--four {
+  left: 1.2rem;
+  top: -0.25rem;
+  width: 1.28rem;
+  height: 1.28rem;
+  animation-delay: -2.7s;
+}
+
+@keyframes dexlabz-bubble-rise {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate3d(0, 0.22rem, 0) scale(0.9);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translate3d(0.06rem, -0.74rem, 0) scale(1.08);
+  }
+
+  70% {
+    opacity: 0.86;
+    transform: translate3d(-0.04rem, -0.36rem, 0) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dexlabz-brand-logo__bubble {
+    animation: none;
+  }
+}
+
+.welcome-page-logo {
+  width: 118px;
+  height: 210px;
+  margin-bottom: 0.25rem;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__crop {
+  height: 178px;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__image {
+  top: -14%;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__bubbles {
+  left: 68%;
+  top: -1.05rem;
+  width: 2.1rem;
+  height: 3.4rem;
+}
+
+.welcome-page-logo .dexlabz-brand-logo__bubbles::before {
+  top: -0.25rem;
+  width: 3.6rem;
+  height: 4.2rem;
+}
+
+@media (min-width: 640px) {
+  .welcome-page-logo {
+    width: 135px;
+    height: 235px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__crop {
+    height: 200px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__image {
+    top: -16%;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__bubbles {
+    top: -1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .welcome-page-logo {
+    width: 120px;
+    height: 215px;
+    margin-bottom: 0.4rem;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__crop {
+    height: 180px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__image {
+    top: -11%;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__bubbles {
+    top: -0.55rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .welcome-page-logo {
+    width: 125px;
+    height: 220px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__crop {
+    height: 185px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__image {
+    top: -10%;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__bubbles {
+    top: -0.5rem;
+  }
+}

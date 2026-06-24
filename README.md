@@ -22,12 +22,12 @@ On Windows PowerShell systems that block npm scripts, use `npm.cmd` in place of
 
 ## Commands
 
-- `npm run dev` — start the development server
-- `npm run lint` — run ESLint
-- `npm run typecheck` — check TypeScript
-- `npm run build` — create a production build
-- `npm run db:indexes` — ensure required MongoDB indexes exist
-- `npm run codes:import -- <file>` — securely import authentication codes
+- `npm run dev` - start the development server
+- `npm run lint` - run ESLint
+- `npm run typecheck` - check TypeScript
+- `npm run build` - create a production build
+- `npm run db:indexes` - ensure required MongoDB indexes exist
+- `npm run codes:import -- <file>` - securely import authentication codes
 
 Do not commit `.env.local` or authentication codes.
 

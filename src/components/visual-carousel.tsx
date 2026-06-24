@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { BrandLogo } from "@/components/brand-logo";
+
 const slides = [
   {
     image: "/images/dexlabz-dunes.png",
@@ -65,7 +67,7 @@ export function VisualCarousel() {
     <section
       aria-label="DexLabz highlights"
       aria-roledescription="carousel"
-      className="relative hidden min-h-[720px] overflow-hidden lg:block"
+      className="relative hidden min-h-0 overflow-hidden lg:block"
     >
       {slides.map((slide, index) => (
         <div
@@ -99,24 +101,15 @@ export function VisualCarousel() {
         className="absolute inset-0 bg-[linear-gradient(115deg,rgba(36,21,76,0.08),transparent_45%)]"
       />
 
-      <div className="absolute inset-0 flex flex-col p-10 xl:p-12">
-        <div className="self-start">
-          <Image
-            alt="DexLabz"
-            className="h-36 w-auto object-contain lg:h-44 xl:h-52"
-            height={208}
-            preload
-            src="/images/dexlabzlogo.png"
-            width={114}
-          />
-        </div>
+      <div className="absolute inset-0 flex flex-col p-8 xl:p-10">
+        <BrandLogo className="absolute left-4 top-10 xl:left-5 xl:top-12" />
 
         <div className="mt-auto max-w-xl pb-5">
-          <div aria-live="polite" className="min-h-[230px]">
+          <div aria-live="polite" className="min-h-[200px]">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/65">
               {slides[activeSlide].eyebrow}
             </p>
-            <h2 className="mt-4 text-4xl font-medium leading-[1.08] tracking-[-0.04em] text-white xl:text-5xl">
+            <h2 className="mt-4 text-4xl font-medium leading-[1.08] tracking-[-0.04em] text-white xl:text-[2.75rem]">
               {slides[activeSlide].title}
             </h2>
             <p className="mt-5 max-w-md text-sm leading-6 text-white/70">
@@ -126,7 +119,7 @@ export function VisualCarousel() {
 
           <div
             aria-label={`Slide ${activeSlide + 1} of ${slides.length}`}
-            className="mt-8 flex items-center gap-2"
+            className="mt-6 flex items-center gap-2"
             role="group"
           >
             {slides.map((slide, index) => (

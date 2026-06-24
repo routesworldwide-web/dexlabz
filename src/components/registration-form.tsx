@@ -245,10 +245,20 @@ export function RegistrationForm() {
             {status.message}
           </p>
         ) : (
-          <p className="flex items-center justify-center gap-2 text-center text-xs leading-5 text-slate-500">
-            <LockIcon />
-            Your code and email can each be used only once.
-          </p>
+          <div className="space-y-2 text-center md:text-start text-xs leading-5 text-slate-500">
+            <p className=" gap-2">
+              Your code and email can each be used only once.
+            </p>
+            <p>
+              Need help?{" "}
+              <a
+                className="font-semibold text-indigo-600 underline-offset-4 transition hover:text-indigo-700 hover:underline"
+                href="mailto:amannegi2314@gmail.com"
+              >
+                Contact us
+              </a>
+            </p>
+          </div>
         )}
       </div>
     </form>
@@ -293,25 +303,6 @@ function KeyIcon() {
     >
       <path
         d="M15.5 7.5a4 4 0 1 1-1.17 2.83L21 3.67M18 6l2 2"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-}
-
-function LockIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="size-3.5 shrink-0"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M7.5 10V7.5a4.5 4.5 0 0 1 9 0V10m-10 0h11a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
