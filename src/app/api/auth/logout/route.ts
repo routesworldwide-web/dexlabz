@@ -8,7 +8,7 @@ import {
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  const response = NextResponse.redirect(new URL("/", request.url), 303);
+  const response = NextResponse.redirect(getRedirectUrl(request), 303);
 
   response.cookies.set(SESSION_COOKIE_NAME, "", {
     ...sessionCookieOptions,
@@ -17,4 +17,27 @@ export async function POST(request: Request) {
   });
 
   return response;
+}
+
+function getRedirectUrl(request: Request): URL {
+  const forwardedHost = getFirstHeaderValue(
+    request.headers.get("x-forwarded-host"),
+  );
+  const host = forwardedHost ?? request.headers.get("host");
+
+  if (host) {
+    const forwardedProto = getFirstHeaderValue(
+      request.headers.get("x-forwarded-proto"),
+    );
+    const protocol =
+      forwardedProto ?? (host.startsWith("localhost") ? "http" : "https");
+
+    return new URL("/", `${protocol}://${host}`);
+  }
+
+  return new URL("/", request.url);
+}
+
+function getFirstHeaderValue(value: string | null): string | null {
+  return value?.split(",")[0]?.trim() || null;
 }

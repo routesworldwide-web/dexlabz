@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { BrandLogo } from "@/components/brand-logo";
@@ -8,6 +7,8 @@ import { BrandLogo } from "@/components/brand-logo";
 const slides = [
   {
     image: "/images/dexlabz-dunes.png",
+    gradient:
+      "from-[#271052] via-[#5f3f96] to-[#12091f]",
     alt: "Purple dunes beneath a twilight sky",
     eyebrow: "Invitation only",
     title: (
@@ -22,6 +23,8 @@ const slides = [
   },
   {
     image: "/images/dexlabz-coast.png",
+    gradient:
+      "from-[#102b55] via-[#5950a3] to-[#170d2c]",
     alt: "Dark coastline beneath a violet evening sky",
     eyebrow: "Make an impact",
     title: (
@@ -36,6 +39,8 @@ const slides = [
   },
   {
     image: "/images/dexlabz-mountains.png",
+    gradient:
+      "from-[#17223f] via-[#4c5f93] to-[#110a22]",
     alt: "Misty mountain valley before dawn",
     eyebrow: "Begin the journey",
     title: (
@@ -71,6 +76,21 @@ export function VisualCarousel() {
     >
       {slides.map((slide, index) => (
         <div
+          aria-hidden="true"
+          className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} transition-opacity duration-1000 ${
+            index === activeSlide ? "opacity-100" : "opacity-0"
+          }`}
+          key={`gradient-${slide.image}`}
+        />
+      ))}
+
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.2),transparent_28%),radial-gradient(circle_at_72%_28%,rgba(103,232,249,0.18),transparent_24%),radial-gradient(circle_at_50%_86%,rgba(12,6,24,0.8),transparent_42%)]"
+      />
+
+      {/* {slides.map((slide, index) => (
+        <div
           aria-hidden={index !== activeSlide}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === activeSlide ? "opacity-100" : "opacity-0"
@@ -86,23 +106,23 @@ export function VisualCarousel() {
             src={slide.image}
           />
         </div>
-      ))}
+      ))} */}
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-[#100b20]/80"
+        className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/5 to-[#100b20]/85"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-white/15"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,transparent_70%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(115deg,rgba(36,21,76,0.08),transparent_45%)]"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(115deg,rgba(16,11,32,0.22),transparent_45%)]"
       />
 
-      <div className="absolute inset-0 flex flex-col p-8 xl:p-10">
-        <BrandLogo className="absolute left-4 top-10 xl:left-5 xl:top-12" />
+      <div className="absolute inset-0 z-10 flex flex-col p-8 xl:p-10">
+        <BrandLogo className="carousel-logo absolute left-4 top-10 xl:left-5 xl:top-12" />
 
         <div className="mt-auto max-w-xl pb-5">
           <div aria-live="polite" className="min-h-[200px]">

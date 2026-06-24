@@ -103,6 +103,18 @@ body {
   top: -0.15rem;
 }
 
+.carousel-logo .dexlabz-brand-logo__image {
+  filter: saturate(1.25) contrast(1.22) brightness(1.08);
+}
+
+.carousel-logo .dexlabz-brand-logo__bubbles {
+  filter: saturate(1.25);
+}
+
+.carousel-logo .dexlabz-brand-logo__bubbles::before {
+  display: none;
+}
+
 .dexlabz-brand-logo__bubbles {
   position: absolute;
   left: 69%;
@@ -284,5 +296,70 @@ body {
 
   .welcome-page-logo .dexlabz-brand-logo__bubbles {
     top: -0.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 760px) {
+  .welcome-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .welcome-page-logo {
+    width: 105px;
+    height: 185px;
+    margin-bottom: 0.1rem;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__crop {
+    height: 155px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__image {
+    top: -9%;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__bubbles {
+    top: -0.35rem;
+  }
+
+  .welcome-title {
+    font-size: clamp(2.5rem, 5.5vw, 3.6rem);
+  }
+
+  .welcome-copy {
+    margin-top: 1rem;
+    line-height: 1.55;
+  }
+
+  .welcome-actions {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 660px) {
+  .welcome-page-logo {
+    width: 92px;
+    height: 165px;
+  }
+
+  .welcome-page-logo .dexlabz-brand-logo__crop {
+    height: 138px;
+  }
+
+  .welcome-title {
+    font-size: clamp(2.2rem, 5vw, 3.1rem);
+  }
+
+  .welcome-copy {
+    margin-top: 0.75rem;
+  }
+
+  .welcome-email {
+    margin-top: 0.6rem;
+  }
+
+  .welcome-actions {
+    margin-top: 1rem;
   }
 }
